@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Mat.round : Redondea el numero
+        //Mat.random : tira un numero al azar del 1 al 10
+        //parseInt:Transforma el string en un numero.
+        //prompt:Sirve para poner el mensaje el el pop up.
+        var numeroPensado = Math.round(Math.random()*10);
+        var numeroLanzado = parseInt(prompt("Elija un numero del 1 al 10"))
+        if(numeroLanzado == numeroPensado){
+            document.write("Usted acerto");
+        }
+        
+        if(numeroLanzado != numeroPensado){
+            document.write("Usted erro , El numero era:" + numeroPensado + ".");
+        }
+    </script>
+</body>
+</html>
