@@ -24,3 +24,36 @@
     </script>
 </body>
 </html>
+
+-- PARCIALES DE HASKELL
+
+data Postre = UnPostre{
+    nom::String,
+    sab::[String],
+    peso::Float,
+    temp::Float
+}deriving(Show , Eq)
+
+ 
+
+bizcocho :: Postre
+bizcocho = UnPostre "Bizcocho" ["frutilla"] 10 0 
+incendio :: Postre -> Postre 
+
+incendio postre = UnPostre (nom postre) (sab postre) (peso postre - (*0.05) (peso postre)) ((+1) (temp postre)) 
+
+immobulus :: Postre -> Postre 
+
+immobulus postre = UnPostre (nom postre) (sab postre) ((*0) (peso postre)) (temp postre)
+
+
+wLeviosa :: Postre -> Postre 
+wLeviosa postre = UnPostre (nom postre) (sab postre ++ ["Concentrado"]) (peso postre - (*0.1) (peso postre)) (temp postre)
+
+diffidio :: Postre -> Float -> Postre 
+
+diffidio postre porcentaje = UnPostre (nom postre) (sab postre) (peso postre - ( (porcentaje / 100) * peso postre) ) (temp postre )
+
+riddikulus :: Postre -> Postre 
+
+riddikulus postre sabor = UnPostre (nom postre) (sab postre ++ (reverse([sabor])) ()
